@@ -1,0 +1,27 @@
+
+{%include "base.html"%}
+
+{% load crispy_forms_tags %} 
+
+<form action="{% url 'booking:search' %}" method="post">
+    
+    {% csrf_token %}
+    <input type="text" name="content"><br>
+
+
+    <button>Sun</button>
+
+</form>
+{% for results in allPosts %}
+
+<a href="{% url 'booking:services_detail' results.slug %}">{{results.title}}</a><br><br>
+{{results.description}} <br><br>
+<td>{{service_d.location}}</td><br>
+<td>{{service_d.category}}</td><br>
+
+{% empty %}
+
+<p>No results found</p>
+
+{% endfor %}<br><br><br><br><br><br>
+{%include "footer.html"%}

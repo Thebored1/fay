@@ -1,0 +1,114 @@
+{%include "base.html"%}
+
+
+
+<script src="https://kit.fontawesome.com/1f5dc7dc1f.js" crossorigin="anonymous"></script>
+
+<style>
+    .service-11 .font-weight-medium {
+	font-weight: 500;
+}
+
+.service-11 .bg-light {
+    background-color: #f4f8fa !important;
+}
+
+.service-11 .subtitle {
+    color: #8d97ad;
+    line-height: 24px;
+}
+
+.service-11 .card.card-shadow {
+    -webkit-box-shadow: 0px 0px 30px rgba(115, 128, 157, 0.1);
+    box-shadow: 0px 0px 30px rgba(115, 128, 157, 0.1);
+}
+
+.service-11 .wrap-service11-box {
+  margin-top: 60px;
+}
+
+.service-11 .wrap-service11-box .icon-space {
+  margin: -70px 0 20px;
+}
+
+.service-11 .wrap-service11-box .icon-space .icon-round {
+  font-size: 45px;
+  color: #ffffff;
+}
+
+.service-11 .bg-success-gradiant {
+    background: #2cdd9b;
+    background: -webkit-linear-gradient(legacy-direction(to right), #2cdd9b 0%, #1dc8cc 100%);
+    background: -webkit-gradient(linear, left top, right top, from(#2cdd9b), to(#1dc8cc));
+    background: -webkit-linear-gradient(left, #2cdd9b 0%, #1dc8cc 100%);
+    background: -o-linear-gradient(left, #2cdd9b 0%, #1dc8cc 100%);
+    background: linear-gradient(to right, #2cdd9b 0%, #1dc8cc 100%);
+}
+
+.service-11 .icon-round {
+		width: 80px;
+    line-height: 80px;
+}
+
+.service-11 .btn-success-gradiant {
+		background: #2cdd9b;
+    background: -webkit-linear-gradient(legacy-direction(to right), #2cdd9b 0%, #1dc8cc 100%);
+    background: -webkit-gradient(linear, left top, right top, from(#2cdd9b), to(#1dc8cc));
+    background: -webkit-linear-gradient(left, #2cdd9b 0%, #1dc8cc 100%);
+    background: -o-linear-gradient(left, #2cdd9b 0%, #1dc8cc 100%);
+    background: linear-gradient(to right, #2cdd9b 0%, #1dc8cc 100%);
+}
+
+.service-11 .btn-success-gradiant:hover {
+		background: #1dc8cc;
+    background: -webkit-linear-gradient(legacy-direction(to right), #1dc8cc 0%, #2cdd9b 100%);
+    background: -webkit-gradient(linear, left top, right top, from(#1dc8cc), to(#2cdd9b));
+    background: -webkit-linear-gradient(left, #1dc8cc 0%, #2cdd9b 100%);
+    background: -o-linear-gradient(left, #1dc8cc 0%, #2cdd9b 100%);
+    background: linear-gradient(to right, #1dc8cc 0%, #2cdd9b 100%);	
+}
+
+.service-11 .btn-md {
+    padding: 15px 45px;
+    font-size: 16px;
+}
+</style>
+
+
+<section class="section core-value bg-tertiary">
+    <div class="container">
+        <div class="section-title">
+            <h1>Your Orders</h1>
+          </div>
+        
+        <div class="row align-items-center">
+            
+            <div class="col-lg-12">
+                
+                <div class="row position-relative gy-4">
+                    {% for order in order %}
+                    <div class="icon-box-item col-md-4">
+                        <div class="block bg-white">
+                            <div class="icon rounded"><i style="color: black; margin-top: 25px;" class="fa-solid fa-calendar-days"></i> </div>
+                            <h3 class="mb-3">Name: {{order.services_required}}</h3>
+                            
+                            <h5 class="mb-3">Date: {{order.date}}</h3>
+                            <h5 class="mb-3">Time: {{order.time}}</h3>
+                                <p class="mb-3">Address: {{order.address}}</p>
+
+                        </div>
+                    </div>
+                    {% endfor %}
+
+                    
+                   
+                </div>
+                
+            </div>
+            
+        </div>
+        
+    </div>
+</section>
+
+{%include "footer.html"%}

@@ -1,0 +1,126 @@
+{%include "base.html"%}
+{% load crispy_forms_tags %} 
+
+
+<style>
+    .service-detail-image{
+        border-radius: 20px;
+        min-height: 20em;
+        max-height: 20em;
+  
+    }
+</style>
+
+
+
+      
+      <section class="section-sm">
+          <div class="container">
+              <div class="row g-5">
+                  <div class="col-lg-6 mb-5 mb-lg-0">
+                      <div class="bg-white shadow rounded-lg p-4 sticky-top" style="top: 30px;">
+                          
+
+
+
+
+    
+                                            <div class="row">
+                                                <div class="col-12 mb-4">
+                                                    <h4>Book {{service_d.title}}</h4>
+                                                   
+                                                </div>
+                                                <div class="col-lg-12">
+                                                    <div class="contact-form">
+                                                        <form action="" enctype="multipart/form-data" method="POST">
+                                                            {% if user.is_authenticated %}
+                                                            {% csrf_token %} 
+                      
+                                                            <div class="form-group mb-4 pb-2">
+                                                                {{ form.date|as_crispy_field }}
+                                                            </div>
+                      
+                                                            <div class="form-group mb-4 pb-2">
+                                                                {{ form.time|as_crispy_field }}                                       
+                                                             </div>
+                    
+                                                            <div class="form-group mb-4 pb-2">
+                                                                {{ form.location|as_crispy_field }}                                       
+                                                             </div>
+                    
+                                                            <div class="form-group mb-4 pb-2">
+                                                                {{ form.address|as_crispy_field }}                                      
+                                                             </div>
+                    
+                                                            <div class="form-group mb-4 pb-2">
+                                                                {{ form.phone_no|as_crispy_field }}                                      
+                                                             </div>
+                    
+                                                            <div class="form-group mb-4 pb-2">
+                                                                {{ form.message|as_crispy_field }}                                      
+                                                             </div>
+                    
+                                                             <input class="btn btn-primary w-100" type="submit" name="submit" value="Submit">
+                                                            
+                                                             {% else %}
+                                                            {% csrf_token %}
+                                                            <a href="{% url 'login' %}">Login before you book this service</a>
+                                                            {% endif %}
+                      
+                                                        </form>
+                    
+                                                    </div>
+                                                </div>
+                                                
+                                            </div>
+
+
+
+
+
+
+
+
+
+
+
+                      </div>
+                  </div>
+                  <div class="col-lg-6">
+                      <div class="content">
+                        <img class="service-detail-image" src="/media/{{service_d.photo}}" alt=""><br><br>
+
+                          <h3 id="heading-1">{{service_d.title}}</h3>
+                          <p>{{service_d.description}}</p>
+                          <h2 id="subheading-2">Service Details</h2>
+                          <ul>
+                              <li>Location: {{service_d.location}}</li>
+                              <li>service category: {{service_d.category}}</li>
+
+                          </ul>
+                          <hr>
+                         
+                          
+                      </div>
+                  </div>
+              </div>
+          </div>
+      </section>
+
+   
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    {%include "footer.html"%}

@@ -1,0 +1,119 @@
+{% load static%}
+
+
+
+
+  <link rel="shortcut icon" href="{% static 'images/favicon.png'%}" type="image/x-icon">
+	<link rel="icon" href="{% static 'images/favicon.png'%}" type="image/x-icon">
+
+	<!-- # Google Fonts -->
+	<link rel="preconnect" href="https://fonts.googleapis.com">
+	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+	<link href="https://fonts.googleapis.com/css2?family=Rubik:wght@400;500;700&display=swap" rel="stylesheet">
+
+	<!-- # CSS Plugins -->
+	<link rel="stylesheet" href="{% static 'plugins/slick/slick.css'%}">
+	<link rel="stylesheet" href="{% static 'plugins/font-awesome/fontawesome.min.css'%}">
+	<link rel="stylesheet" href="{% static 'plugins/font-awesome/brands.css'%}">
+	<link rel="stylesheet" href="{% static 'plugins/font-awesome/solid.css'%}">
+	<script src="https://kit.fontawesome.com/f78f41b9a4.js" crossorigin="anonymous"></script>
+	<!-- # Main Style Sheet -->
+	<link rel="stylesheet" href="{% static 'css/style.css'%}">
+
+  <!-- slider css -->
+
+  <link rel="stylesheet" href="fonts/icomoon/style.css'%}">
+<link rel="stylesheet" href="{% static 'service-css/owl.carousel.min.css'%}">
+<link rel="stylesheet" href="{% static 'service-css/style.css'%}">
+
+  <!-- slider css -->
+
+  <!-- search css -->
+  <link rel="stylesheet" href="{% static 'search-css/main.css'%}">
+
+  <!-- search css -->
+
+
+
+
+                                <script type='text/javascript' src='https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js'></script>
+
+</head>
+<style>
+
+p{
+  font-size: 18px;
+  color: black;
+  font-weight: 400;
+}
+
+	.content{
+	  padding-top: 20px;
+	  padding-bottom: 20px;
+	}
+	
+	</style>
+<body>
+
+<!-- navigation -->
+<header class="navigation bg-tertiary">
+	<nav class="navbar navbar-expand-xl navbar-light text-center py-3">
+		<div class="container">
+			<a class="navbar-brand" href="{% url 'booking:home' %}">
+				<img loading="prelaod" decoding="async" class="img-fluid" width="160" src="{% static 'images/logooo.png'%}" alt="Wallet">
+			</a>
+			<button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation"> <span class="navbar-toggler-icon"></span>
+			</button>
+			<div class="collapse navbar-collapse" id="navbarSupportedContent">
+				<ul class="navbar-nav mx-auto mb-2 mb-lg-0">
+					<li class="nav-item"> <a class="nav-link" href="{% url 'booking:home' %}">Home</a>
+					</li>
+					<li class="nav-item "> <a class="nav-link" href="{% url 'booking:about' %}">About</a>
+          </li>
+					<li class="nav-item "> <a class="nav-link" href="{% url 'booking:orders' %}">Orders</a>
+          </li>
+					<li class="nav-item "> <a class="nav-link" href="{% url 'booking:services' %}">Services</a>
+					</li>
+					<li class="nav-item "> <a class="nav-link" href="{% url 'booking:contact' %}">Contact</a>
+					</li>
+					
+
+				</ul>
+
+
+
+          {% if user.is_authenticated %}
+
+
+        <!-- account btn --> <a href="{% url 'booking:orders' %}" class="btn btn-outline-primary">{{ user.get_username }}</a>
+				<!-- account btn --> <a href="{% url 'logout' %}?next=/accounts/login/" class="btn btn-primary ms-2 ms-lg-3">Log Out</a>
+
+           
+
+          {% else %}
+
+
+          				<!-- account btn --> <a href="{% url 'login' %}" class="btn btn-outline-primary">Log In</a>
+				<!-- account btn --> <a href="{% url 'booking:register' %}" class="btn btn-primary ms-2 ms-lg-3">Sign Up</a>
+
+          {% endif %}
+      
+
+	
+			</div>
+		</div>
+	</nav>
+</header>
+
+
+
+
+  
+
+  
+  </body>
+  </html>
+
+
+
+<!-- /navigation -->

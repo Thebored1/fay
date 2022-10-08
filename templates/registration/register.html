@@ -1,0 +1,49 @@
+
+    {%include "base.html"%}
+    {% load crispy_forms_tags %}         
+
+
+
+
+    <section class="section">
+        <div class="container">
+            <div class="row justify-content-center align-items-center">
+
+                <div class="col-lg-10">
+                    <div class="shadow rounded p-5 bg-white">
+                        <div class="row">
+                            <div class="col-12 mb-4">
+                                <h4>REGISTER</h4>
+                                {% if form.errors %}
+                                <p>There are errors in the form!</p>
+                                {% endif %}
+                            </div>
+                            <div class="col-lg-12">
+                                <div class="contact-form">
+                                    <form method="post" action="{% url 'booking:register' %}">
+                                        {% csrf_token %}
+
+                                        <div class="form-group mb-4 pb-2">
+                                            {{ form|crispy }}
+                                        </div>
+  
+                                        
+  
+
+                                        <input class="btn btn-primary w-100" type="submit" value="Register">
+                                        
+  
+  
+                                    </form>
+
+                                </div>
+                            </div>
+                            
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    {%include "footer.html"%}

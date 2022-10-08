@@ -1,0 +1,15 @@
+{%include "base.html"%}
+
+
+
+
+{% for blogs in blogs %}
+<img class="img-thumbnail" src="/media/{{blogs.image}}" alt="Card image cap">
+<a href="{% url 'blog:blog_detail' blogs.slug %}">{{ blogs.title }}</a>
+{{ blogs.content }}
+{{ blogs.created_at }}
+
+{% endfor %}
+
+
+{%include "footer.html"%}
